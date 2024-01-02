@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="my-auto">
+    <div>
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-lg text-center">
           <h1 className="text-3xl lg:text-4xl font-semibold text-gray-800 capitalize">

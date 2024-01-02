@@ -3,7 +3,7 @@ import { Hero } from "../components";
 
 const Home = () => {
   return (
-    <section className="bg-green-500">
+    <section className="my-auto">
       <Hero />
     </section>
   );
