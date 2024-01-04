@@ -1,12 +1,8 @@
 import React from "react";
 import { IoIosArrowForward } from "react-icons/io";
-import { ProductList } from "../components";
-import { useGetProductsQuery } from "../features/products/productApi";
+import { ProductList, Spinner } from "../components";
 
 const Shop = () => {
-  const { data, isLoading, isSuccess, isError, error } = useGetProductsQuery();
-
-  console.log("data: ", data);
   return (
     <section className="py-10">
       <div className="container mx-auto px-4">
@@ -22,7 +18,7 @@ const Shop = () => {
             cillum sint consectetur cupidatat.
           </p>
         </div>
-        <ProductList data={data} />
+        <ProductList />
       </div>
     </section>
   );
