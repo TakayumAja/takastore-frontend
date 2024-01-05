@@ -37,9 +37,16 @@ const Navbar = () => {
         >
           {!toggle ? <BiMenu /> : <BiX />}
         </button>
-        <div className="hidden md:flex items-center gap-[25px]">
-          <BiSearch className="text-[#637381] text-2xl" />
-          <BiCart className="text-[#637381] text-2xl" />
+        <div className="hidden md:flex items-center gap-1">
+          <button className="p-2">
+            <BiSearch className="text-[#637381] text-2xl" />
+          </button>
+          <button className="relative p-2">
+            <span className="absolute bg-black text-white text-sm px-1.5 rounded-full top-0 -right-1.5">
+              1
+            </span>
+            <BiCart className="text-[#637381] text-2xl" />
+          </button>
         </div>
       </div>
     </header>
