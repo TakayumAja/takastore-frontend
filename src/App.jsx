@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./layouts/Root";
-import { Home, Shop, Cart } from "./pages";
+import { Home, Shop, Cart, DetailProduct } from "./pages";
 
 export const routes = createBrowserRouter([
   {
@@ -10,6 +10,7 @@ export const routes = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "shop", element: <Shop /> },
       { path: "cart", element: <Cart /> },
+      { path: "shop/:id", element: <DetailProduct /> },
     ],
   },
 ]);
