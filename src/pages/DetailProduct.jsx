@@ -7,6 +7,7 @@ const DetailProduct = () => {
   return (
     <section className="py-10">
       <div className="container mx-auto flex flex-col lg:flex-row md:gap-[63px] px-4">
+        {/* Placeholder Image*/}
         <div className="basis-1/2">
           <div className="mb-4 md:mb-0">
             <img
@@ -35,7 +36,10 @@ const DetailProduct = () => {
             </ul>
           </div>
         </div>
+
+        {/* Product Info*/}
         <div className="basis-1/2">
+          {/* Info */}
           <div className="space-y-4 pb-6 mt-4 md:mt-0">
             <div className="flex items-center gap-2.5">
               <div className="flex text-base gap-0.5">
@@ -64,6 +68,7 @@ const DetailProduct = () => {
             </div>
           </div>
 
+          {/* Product Timer */}
           <div className="py-6 border-y border-y-[##E8ECEF] space-y-3">
             <p className="text-[#343839] font-normal text-[26px]">
               Offer expires in:
@@ -104,6 +109,7 @@ const DetailProduct = () => {
             </ul>
           </div>
 
+          {/* Product Examples*/}
           <div className="py-6">
             <p className="text-[#6C7275] font-semibold text-base leading-[26px] mb-2">
               Measurements
@@ -142,6 +148,7 @@ const DetailProduct = () => {
             </div>
           </div>
 
+          {/* Proudct Cart*/}
           <div className="py-6">
             <div className="flex gap-2 mb-4">
               <div className="flex items-center justify-between border gap-6 px-4">
@@ -156,6 +163,18 @@ const DetailProduct = () => {
             </div>
             <p className="flex items-center justify-center px-10 py-3 border rounded-lg bg-black text-white font-medium text-lg">
               Add to Cart
+            </p>
+          </div>
+
+          {/* Proudct Stock & Category*/}
+          <div className="py-6 space-y-2">
+            <p className="flex text-xs leading-5">
+              <span className="basis-1/4 text-[#6C7275]">SKU</span>
+              <span className="grow text-[#141718]">117</span>
+            </p>
+            <p className="flex text-xs leading-5">
+              <span className="basis-1/4 text-[#6C7275]">CATEGORY</span>
+              <span className="grow text-[#141718">Living Room, Bedroom</span>
             </p>
           </div>
         </div>
