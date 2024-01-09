@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./layouts/Root";
-import { Home, Shop, Cart, DetailProduct, SignIn } from "./pages";
+import { Home, Shop, Cart, DetailProduct, SignIn, SignUp } from "./pages";
 
 export const routes = createBrowserRouter([
   {
@@ -12,6 +12,7 @@ export const routes = createBrowserRouter([
       { path: "cart", element: <Cart /> },
       { path: "shop/:id", element: <DetailProduct /> },
       { path: "login", element: <SignIn /> },
+      { path: "register", element: <SignUp /> },
     ],
   },
 ]);
