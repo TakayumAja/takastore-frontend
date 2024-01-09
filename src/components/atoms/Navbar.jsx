@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <header className="h-20 flex sticky top-0 bg-white z-10 shadow">
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link to="/" className="font-bold text-2xl text-[#3758F9]">
+        <Link to="/">
           <img src={Logo} className="w-auto h-6 sm:h-7" />
         </Link>
         <nav>
@@ -26,26 +26,28 @@ const Navbar = () => {
           >
             {menu.map((items, index) => (
               <li key={index} onClick={() => setToggle(!toggle)}>
-                <Link to={items.path}>{items.name}</Link>
+                <Link to={items.path} className="text-natural-400">
+                  {items.name}
+                </Link>
               </li>
-            ))}{" "}
+            ))}
           </ul>
         </nav>
         <button
-          className="md:hidden text-3xl text-[#637381]"
+          className="md:hidden text-3xl text-natural-700"
           onClick={() => setToggle(!toggle)}
         >
           {!toggle ? <BiMenu /> : <BiX />}
         </button>
         <div className="hidden md:flex items-center gap-1">
           <button className="p-2">
-            <BiSearch className="text-[#637381] text-2xl" />
+            <BiSearch className="text-natural-700 text-2xl" />
           </button>
           <button className="relative p-2">
             <span className="absolute bg-black text-white text-sm px-1.5 rounded-full top-0 -right-1.5">
               1
             </span>
-            <BiCart className="text-[#637381] text-2xl" />
+            <BiCart className="text-natural-700 text-2xl" />
           </button>
         </div>
       </div>

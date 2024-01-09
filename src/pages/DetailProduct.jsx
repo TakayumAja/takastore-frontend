@@ -43,66 +43,68 @@ const DetailProduct = () => {
           <div className="space-y-4 pb-6 mt-4 md:mt-0">
             <div className="flex items-center gap-2.5">
               <div className="flex text-base gap-0.5">
-                <BiSolidStar />
-                <BiSolidStar />
-                <BiSolidStar />
-                <BiSolidStar />
+                <BiSolidStar className="text-natural-700 h-4 w-4" />
+                <BiSolidStar className="text-natural-700 h-4 w-4" />
+                <BiSolidStar className="text-natural-700 h-4 w-4" />
+                <BiSolidStar className="text-natural-700 h-4 w-4" />
               </div>
-              <p className="text-[#1417178] text-sm font-normal leading-5">
+              <p className="text-natural-700 text-sm font-normal leading-5">
                 11 Riviews
               </p>
             </div>
-            <h1 className="text-4xl font-medium">
+            <h1 className="text-4xl text-natural-700 font-medium">
               Fall Limited Edition Sneakers
             </h1>
-            <p className="font-normal text-base text-[#6C7275] leading-[26px]">
+            <p className="font-normal text-base text-natural-400 leading-[26px]">
               These low-profile sneakers are your perfect casual wear companion.
               Featuring a durable rubber outer sole, they’ll withstand
               everything the weather can offer.
             </p>
             <div className="flex items-center gap-4">
-              <p className="text-[28px] font-medium leading-[34px]">$199.000</p>
-              <p className="text-xl leading-[28px] font-medium text-[#6C7275] line-through">
+              <p className="text-[28px] font-medium leading-[34px] text-natural-700">
+                $199.000
+              </p>
+              <p className="text-xl leading-[28px] font-medium text-natural-400 line-through">
                 $400
               </p>
             </div>
           </div>
 
           {/* Product Timer */}
-          <div className="py-6 border-y border-y-[##E8ECEF] space-y-3">
-            <p className="text-[#343839] font-normal text-[26px]">
+          <div className="py-6 border-y border-y-natural-300 space-y-3">
+            <p className="text-natural-500 font-normal text-[26px]">
               Offer expires in:
             </p>
             <ul className="flex gap-4">
               <li className="text-center">
-                <p className="text-[34px] bg-[#F3F5F7] text-black p-3 font-medium leading-[#38px] tracking-[-0.0375em]">
+                <p className="text-[34px] bg-natural-200 text-natural-700 p-3 font-medium leading-[#38px] tracking-[-0.0375em]">
                   02
                 </p>
-                <p className="text-xs font-normal leading-5 text-[#6C7275]">
+                <p className="text-xs font-normal leading-5 text-natural-400">
                   Days
                 </p>
               </li>
               <li className="text-center">
-                <p className="text-[34px] bg-[#F3F5F7] text-black p-3 font-medium leading-[#38px] tracking-[-0.0375em]">
+                <p className="text-[34px] bg-natural-200 text-natural-700 p-3 font-medium leading-[#38px] tracking-[-0.0375em]">
                   02
                 </p>
-                <p className="text-xs font-normal leading-5 text-[#6C7275]">
+                <p className="text-xs font-normal leading-5 text-natural-400">
                   Hours
                 </p>
               </li>
               <li className="text-center">
-                <p className="text-[34px] bg-[#F3F5F7] text-black p-3 font-medium leading-[#38px] tracking-[-0.0375em]">
+                <p className="text-[34px] bg-natural-200 text-natural-700 p-3 font-medium leading-[#38px] tracking-[-0.0375em]">
                   02
                 </p>
-                <p className="text-xs font-normal leading-5 text-[#6C7275]">
+                <p className="text-xs font-normal leading-5 text-natural-400">
                   Minutes
                 </p>
               </li>
               <li className="text-center">
-                <p className="text-[34px] bg-[#F3F5F7] text-black p-3 font-medium leading-[#38px] tracking-[-0.0375em]">
+                <p className="text-[34px] bg-natural-200 text-natural-700 p-3 font-medium leading-[#38px] tracking-[-0.0375em]">
                   02
                 </p>
-                <p className="text-xs font-normal leading-5 text-[#6C7275]">
+                <p className="text-xs font-normal leading-5 text-natural-400">
                   Seconds
                 </p>
               </li>
@@ -111,15 +113,19 @@ const DetailProduct = () => {
 
           {/* Product Examples*/}
           <div className="py-6">
-            <p className="text-[#6C7275] font-semibold text-base leading-[26px] mb-2">
+            <p className="text-natural-400 font-semibold text-base leading-[26px] mb-2">
               Measurements
             </p>
-            <p className="leading-[32px] text-lg mb-6">17 1/2x20 5/8</p>
-            <button className="flex items-center gap-1 leading-[26px] font-semibold text-base text-[#6C7275] mb-2">
+            <p className="leading-[32px] text-lg mb-6 text-natural-700">
+              17 1/2x20 5/8
+            </p>
+            <button className="flex items-center gap-1 leading-[26px] font-semibold text-base text-natural-400 mb-2">
               <span>Choose Color</span>
               <IoIosArrowForward className="h-6 w-4" />
             </button>
-            <p className="leading-[32px] text-lg font-normal">Black</p>
+            <p className="leading-[32px] text-lg font-normal text-natural-700">
+              Black
+            </p>
             <div className="flex gap-4">
               <div className="h-[72px] w-[72px] border">
                 <img
@@ -169,12 +175,14 @@ const DetailProduct = () => {
           {/* Proudct Stock & Category*/}
           <div className="py-6 space-y-2">
             <p className="flex text-xs leading-5">
-              <span className="basis-1/4 text-[#6C7275]">SKU</span>
-              <span className="grow text-[#141718]">117</span>
+              <span className="basis-1/4 text-natural-400">SKU</span>
+              <span className="grow text-natural-700">117</span>
             </p>
             <p className="flex text-xs leading-5">
-              <span className="basis-1/4 text-[#6C7275]">CATEGORY</span>
-              <span className="grow text-[#141718">Living Room, Bedroom</span>
+              <span className="basis-1/4 text-natural-400">CATEGORY</span>
+              <span className="grow text-natural-700">
+                Living Room, Bedroom
+              </span>
             </p>
           </div>
         </div>

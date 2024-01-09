@@ -18,15 +18,17 @@ const ProductCard = (props) => {
         />
       </div>
       <div className="flex flex-col gap-1.5 p-4">
-        <p className="line-clamp-2 text-sm lg:text-lg font-semibold">{title}</p>
-        <p className="text-sm md:text-base flex items-center gap-1 text-[#637381]">
+        <p className="line-clamp-2 text-sm lg:text-lg font-semibold text-natural-700">
+          {title}
+        </p>
+        <p className="text-sm md:text-base flex items-center gap-1 text-natural-400">
           {rating.count} reviews | {rating.rate}
-          <BiSolidStar className="text-yellow-300" />
+          <BiSolidStar className="text-natural-500" />
         </p>
       </div>
-      <p className="p-4 text-lg flex items-center justify-between font-medium lg:mt-2.5">
+      <p className="text-natural-700 p-4 text-lg flex items-center justify-between font-medium lg:mt-2.5">
         <span>$ {price}</span>
-        <button className="bg-green-800 p-2 rounded-lg text-white">
+        <button className="bg-second-green p-2 rounded-lg text-white">
           <BiSolidCartAdd />
         </button>
       </p>
