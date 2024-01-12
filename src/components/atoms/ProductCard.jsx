@@ -1,12 +1,14 @@
 import React from "react";
 import { Shoses1 } from "../../assets";
 import { BiSolidCartAdd, BiSolidStar } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const ProductCard = (props) => {
   console.log(props);
-  const { price, title, rating, image } = props.data;
+  const { id, price, title, rating, image } = props.data;
   return (
-    <div
+    <Link
+      to={`/shop/${id}`}
       id="card"
       className="flex flex-col justify-between group w-max-sm border border-gray-200 rounded-lg shadow overflow-hidden"
     >
@@ -32,7 +34,7 @@ const ProductCard = (props) => {
           <BiSolidCartAdd />
         </button>
       </p>
-    </div>
+    </Link>
   );
 };
 
