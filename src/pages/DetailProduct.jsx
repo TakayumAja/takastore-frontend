@@ -1,18 +1,33 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import { BiHeart, BiSolidStar } from "react-icons/bi";
 import { IoIosArrowForward } from "react-icons/io";
 import { Shoses1, Shoses2, Shoses3, Shoses4 } from "../assets";
+import { useGetProductsDetailQuery } from "../features/products/productApi";
+import { Spinner } from "../components";
 
 const DetailProduct = () => {
-  return (
-    <section className="py-10">
+  const { id } = useParams();
+
+  const { data, isLoading, isError } = useGetProductsDetailQuery(id);
+
+  const handlerCountProducts = (e) => {
+    console.log(e.target.value);
+  };
+
+  let content;
+
+  if (isLoading) {
+    content = <Spinner />;
+  } else {
+    content = (
       <div className="container mx-auto flex flex-col lg:flex-row md:gap-[63px] px-4">
         {/* Placeholder Image*/}
         <div className="basis-1/2">
           <div className="mb-4 md:mb-0">
             <img
-              src="https://tsbsankara-e-commerce-yt.netlify.app/images/image-product-2.jpg"
-              className="rounded-lg object-cover object-center h-[311px]md:h-[728px]"
+              src={data.image}
+              className="rounded-lg object-cover object-center w-auto h-[310px]md:h-[728px]"
             />
             <ul className="md:flex mt-4 gap-4 hidden">
               <li className="w-[176px] h-[176px] overflow-hidden rounded-lg">
@@ -49,20 +64,18 @@ const DetailProduct = () => {
                 <BiSolidStar className="text-natural-700 h-4 w-4" />
               </div>
               <p className="text-natural-700 text-sm font-normal leading-5">
-                11 Riviews
+                {data.rating.rate} Riviews
               </p>
             </div>
             <h1 className="text-4xl text-natural-700 font-medium">
-              Fall Limited Edition Sneakers
+              {data.title}
             </h1>
             <p className="font-normal text-base text-natural-400 leading-[26px]">
-              These low-profile sneakers are your perfect casual wear companion.
-              Featuring a durable rubber outer sole, they’ll withstand
-              everything the weather can offer.
+              {data.description}
             </p>
             <div className="flex items-center gap-4">
               <p className="text-[28px] font-medium leading-[34px] text-natural-700">
-                $199.000
+                ${data.price}
               </p>
               <p className="text-xl leading-[28px] font-medium text-natural-400 line-through">
                 $400
@@ -159,7 +172,11 @@ const DetailProduct = () => {
             <div className="flex gap-2 mb-4">
               <div className="flex items-center justify-between border gap-6 px-4">
                 <button className="text-xl">+</button>
-                <input value={1} className="w-5 text-center" />
+                <input
+                  onChange={handlerCountProducts}
+                  value={1}
+                  className="w-5 text-center"
+                />
                 <button className="text-xl">-</button>
               </div>
               <p className="grow py-2.5 rounded-lg flex items-center border justify-center gap-2 font-medium">
@@ -176,19 +193,19 @@ const DetailProduct = () => {
           <div className="py-6 space-y-2">
             <p className="flex text-xs leading-5">
               <span className="basis-1/4 text-natural-400">SKU</span>
-              <span className="grow text-natural-700">117</span>
+              <span className="grow text-natural-700">{data.rating.count}</span>
             </p>
             <p className="flex text-xs leading-5">
               <span className="basis-1/4 text-natural-400">CATEGORY</span>
-              <span className="grow text-natural-700">
-                Living Room, Bedroom
-              </span>
+              <span className="grow text-natural-700">{data.category}</span>
             </p>
           </div>
         </div>
       </div>
-    </section>
-  );
+    );
+  }
+
+  return <section className="py-10">{content}</section>;
 };
 
 export default DetailProduct;

@@ -4,7 +4,6 @@ import { BiSolidCartAdd, BiSolidStar } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 const ProductCard = (props) => {
-  console.log(props);
   const { id, price, title, rating, image } = props.data;
   return (
     <Link
