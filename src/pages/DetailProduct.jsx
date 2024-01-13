@@ -2,9 +2,10 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { BiHeart, BiSolidStar } from "react-icons/bi";
 import { IoIosArrowForward } from "react-icons/io";
-import { Shoses1, Shoses2, Shoses3, Shoses4 } from "../assets";
+import { toast } from "react-toastify";
 import { useGetProductsDetailQuery } from "../features/products/productApi";
 import { Spinner } from "../components";
+import { Shoses1, Shoses2, Shoses3, Shoses4 } from "../assets";
 
 const DetailProduct = () => {
   const { id } = useParams();
@@ -13,6 +14,10 @@ const DetailProduct = () => {
 
   const handlerCountProducts = (e) => {
     console.log(e.target.value);
+  };
+
+  const handleAddCart = () => {
+    toast.success("Product Ditambahkan");
   };
 
   let content;
@@ -184,9 +189,12 @@ const DetailProduct = () => {
                 <span className="text-lg">Wishlist</span>
               </p>
             </div>
-            <p className="flex items-center justify-center px-10 py-3 border rounded-lg bg-black text-white font-medium text-lg">
+            <button
+              onClick={handleAddCart}
+              className="w-full flex items-center justify-center px-10 py-3 border rounded-lg bg-black text-white font-medium text-lg"
+            >
               Add to Cart
-            </p>
+            </button>
           </div>
 
           {/* Proudct Stock & Category*/}

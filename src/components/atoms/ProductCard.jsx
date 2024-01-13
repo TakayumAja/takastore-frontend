@@ -2,9 +2,15 @@ import React from "react";
 import { Shoses1 } from "../../assets";
 import { BiSolidCartAdd, BiSolidStar } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const ProductCard = (props) => {
   const { id, price, title, rating, image } = props.data;
+
+  const handleAddCart = () => {
+    toast.success("Product Ditambahkan");
+  };
+
   return (
     <Link
       to={`/shop/${id}`}
@@ -29,7 +35,10 @@ const ProductCard = (props) => {
       </div>
       <p className="text-natural-700 p-4 text-lg flex items-center justify-between font-medium lg:mt-2.5">
         <span>$ {price}</span>
-        <button className="bg-second-green p-2 rounded-lg text-white">
+        <button
+          className="bg-second-green p-2 rounded-lg text-white"
+          onClick={handleAddCart}
+        >
           <BiSolidCartAdd />
         </button>
       </p>
