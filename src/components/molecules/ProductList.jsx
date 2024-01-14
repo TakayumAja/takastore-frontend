@@ -6,7 +6,7 @@ import { useGetProductsQuery } from "../../features/products/productApi";
 const ProductList = () => {
   const { data, isLoading, isSuccess, isError, error } = useGetProductsQuery();
   return (
-    <section>
+    <>
       {isLoading ? (
         <Spinner />
       ) : (
@@ -16,7 +16,7 @@ const ProductList = () => {
           ))}
         </div>
       )}
-    </section>
+    </>
   );
 };
 
