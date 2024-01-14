@@ -23,7 +23,11 @@ const DetailProduct = () => {
   let content;
 
   if (isLoading) {
-    content = <Spinner />;
+    content = (
+      <div className="flex flex-1 items-center justify-center">
+        <Spinner />
+      </div>
+    );
   } else {
     content = (
       <div className="container mx-auto flex flex-col lg:flex-row md:gap-[63px] px-4">
@@ -213,7 +217,7 @@ const DetailProduct = () => {
     );
   }
 
-  return <section className="py-10">{content}</section>;
+  return <section className="py-10 flex flex-1">{content}</section>;
 };
 
 export default DetailProduct;
