@@ -6,18 +6,16 @@ import { toast } from "react-toastify";
 import { useGetProductsDetailQuery } from "../features/products/productApi";
 import { Spinner } from "../components";
 import { Shoses1, Shoses2, Shoses3, Shoses4 } from "../assets";
+import { useDispatch } from "react-redux";
+import { addCart } from "../features/cart/cartSlice";
 
 const DetailProduct = () => {
   const { id } = useParams();
-
   const { data, isLoading, isError } = useGetProductsDetailQuery(id);
+  const dispactch = useDispatch();
 
   const handlerCountProducts = (e) => {
     console.log(e.target.value);
-  };
-
-  const handleAddCart = () => {
-    toast.success("Product Ditambahkan");
   };
 
   let content;
@@ -194,7 +192,7 @@ const DetailProduct = () => {
               </p>
             </div>
             <button
-              onClick={handleAddCart}
+              onClick={() => dispactch(addCart())}
               className="w-full flex items-center justify-center px-10 py-3 border rounded-lg bg-black text-white font-medium text-lg"
             >
               Add to Cart

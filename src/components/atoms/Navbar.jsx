@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { BiCart, BiMenu, BiSearch, BiX } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { Logo } from "../../assets";
+import { useSelector } from "react-redux";
+import { countCartItems } from "../../features/cart/cartSlice";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -11,6 +13,8 @@ const Navbar = () => {
     { path: "/products", name: "Products" },
     { path: "/contacts", name: "Contact Us" },
   ];
+
+  const cart = useSelector(countCartItems);
 
   return (
     <header className="h-20 flex sticky top-0 bg-white z-10 shadow">
@@ -45,7 +49,7 @@ const Navbar = () => {
           </button>
           <button className="relative p-2">
             <span className="absolute bg-black text-white text-sm px-1.5 rounded-full top-0 -right-1.5">
-              1
+              {cart}
             </span>
             <BiCart className="text-natural-700 text-2xl" />
           </button>
